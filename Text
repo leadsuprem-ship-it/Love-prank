@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Pradnya ❤️</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#000;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+/* Background Stars */
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.2;}
+to{opacity:1;}
+}
+
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+color:#ff4d8d;
+opacity:.6;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100px);
+}
+}
+
+/* Glass Card */
+
+.card{
+width:90%;
+max-width:520px;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,0.15);
+
+padding:40px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:
+0 0 30px rgba(255,77,141,.25),
+0 0 80px rgba(255,77,141,.15);
+
+animation:fadeIn 1s ease;
+z-index:10;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.logo{
+font-size:60px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.12);
+}
+}
+
+h1{
+color:white;
+margin-top:10px;
+font-size:34px;
+}
+
+p{
+color:#ddd;
+margin-top:15px;
+line-height:1.8;
+font-size:17px;
+}
+
+.buttons{
+position:relative;
+height:130px;
+margin-top:30px;
+}
+
+button{
+border:none;
+cursor:pointer;
+padding:15px 32px;
+border-radius:50px;
+font-size:18px;
+font-weight:600;
+transition:.3s;
+}
+
+#yesBtn{
+background:#ff4d8d;
+color:white;
+box-shadow:0 0 20px #ff4d8d;
+}
+
+#yesBtn:hover{
+transform:scale(1.08);
+}
+
+#noBtn{
+background:white;
+color:#ff4d8d;
+position:absolute;
+left:60%;
+top:0;
+}
+
+.footer{
+margin-top:20px;
+font-size:13px;
+color:#888;
+}
+</style></head><body><div class="card"><div class="logo">❤️</div><h1>Pradnya</h1><p>
+I have something important to ask you...
+<br><br>
+Will you stay with me and create beautiful memories forever? ✨
+</p><div class="buttons">
+<button id="yesBtn">Yes, Always ❤️</button>
+<button id="noBtn">No 😢</button>
+</div><div class="footer">
+Made with ❤️ by Jayash
+</div></div><script>
+
+/* Stars */
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement("div");
+
+star.classList.add("star");
+
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(star);
+}
+
+/* Hearts */
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*20)+"px";
+
+heart.style.animationDuration=(6+Math.random()*8)+"s";
+
+document.body.appendChild(heart);
+}
+
+const yesBtn=document.getElementById("yesBtn");
+const noBtn=document.getElementById("noBtn");
+
+let size=18;
+
+const texts=[
+"Are you sure? 🥺",
+"Think again ❤️",
+"Really? 😭",
+"Last chance 😆",
+"Nope 😂"
+];
+
+let count=0;
+
+function moveNo(){
+
+const x=Math.random()*(window.innerWidth-150);
+const y=Math.random()*(window.innerHeight-100);
+
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
+noBtn.innerHTML=texts[count%texts.length];
+
+count++;
+
+size+=5;
+
+yesBtn.style.fontSize=size+"px";
+}
+
+noBtn.addEventListener("mouseover",moveNo);
+noBtn.addEventListener("click",moveNo);
+
+yesBtn.addEventListener("click",()=>{
+
+document.body.innerHTML=`
+
+<div style="
+background:black;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+">
+
+<h1 style="
+color:#ff4d8d;
+font-size:55px;
+text-shadow:0 0 25px #ff4d8d;
+">
+❤️ YAYYY PRADNYA ❤️
+</h1>
+
+<p style="
+color:white;
+font-size:22px;
+max-width:700px;
+line-height:1.8;
+margin-top:20px;
+">
+You just made me the happiest person alive.
+<br><br>
+Thank you for being part of my story.
+<br><br>
+Forever starts now. 🌹
+</p>
+
+<h2 style="
+margin-top:30px;
+color:#ff4d8d;
+">
+— Jayash ❤️
+</h2>
+
+</div>
+`;
+});
+
+</script></body>
+</html>
